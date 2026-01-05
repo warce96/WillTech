@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Propuesta de Desarrollo – Plataforma Médica Premium</title>
+  <title>Propuesta de Servicios Digitales – Veterinaria</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
@@ -37,7 +37,6 @@
       overflow: hidden;
     }
 
-    /* --------- PORTADA CON FRANJA LATERAL --------- */
     .cover-page {
       display: flex;
       min-height: 420px;
@@ -56,12 +55,10 @@
       align-items: center;
       text-align: center;
       justify-content: center;
-      background: #ffffff;
     }
 
     .cover-logo img {
       width: 180px;
-      height: auto;
       margin-bottom: 24px;
     }
 
@@ -69,20 +66,17 @@
       font-size: 28px;
       font-weight: 600;
       margin-bottom: 4px;
-      color: #1a1a1a;
     }
 
     .cover-subtitle {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 600;
       margin-bottom: 16px;
-      color: #1a1a1a;
     }
 
     .cover-meta {
       font-size: 14px;
       color: var(--text-muted);
-      margin-bottom: 4px;
     }
 
     .cover-footer {
@@ -91,35 +85,18 @@
       margin-top: 30px;
     }
 
-    /* --------- CONTENIDO PRINCIPAL (RESTO) --------- */
-
     header {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
       padding: 26px 36px;
-      gap: 28px;
-      background: #ffffff;
       border-bottom: 1px solid var(--border);
     }
 
-    .header-logo img { width: 130px; height: auto; }
+    .header-logo img { width: 130px; }
 
     .header-text {
       margin-left: auto;
       text-align: right;
-    }
-
-    .header-text h1 {
-      font-size: 26px;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .header-text p {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 4px;
     }
 
     main { padding: 28px 38px; }
@@ -132,331 +109,205 @@
       border: 1px solid var(--border);
     }
 
-    h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
+    h2 { font-size: 20px; margin-bottom: 10px; }
+    h3 { font-size: 16px; margin: 8px 0; color: #444; }
 
-    h3 {
-      font-size: 15px;
-      margin: 8px 0 6px;
-      font-weight: 600;
+    p, ul li {
+      font-size: 14px;
       color: #444;
     }
-
-    p { margin-bottom: 6px; font-size: 14px; }
 
     ul {
       list-style: none;
       padding-left: 0;
-      font-size: 14px;
     }
 
     ul li {
-      margin-bottom: 6px;
       padding-left: 16px;
       position: relative;
-      color: #444;
+      margin-bottom: 6px;
     }
 
     ul li::before {
       content: "•";
       position: absolute;
       left: 4px;
-      top: 0;
       color: var(--accent);
-      font-weight: bold;
     }
 
-    .payment-box {
-      margin-top: 8px;
-      padding: 14px 18px;
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      font-size: 14px;
-    }
-
-    table.cost-table {
+    table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 10px;
     }
 
-    table.cost-table th,
-    table.cost-table td {
+    table th, table td {
       padding: 10px;
       border: 1px solid var(--border);
       font-size: 14px;
-      text-align: left;
     }
 
-    table.cost-table th {
+    table th {
       background: #f0f0f0;
       font-weight: 600;
     }
 
     footer {
       padding: 0 38px 26px;
-      margin-top: 10px;
-    }
-
-    footer h3 {
-      font-size: 16px;
-      margin-bottom: 8px;
-      font-weight: 600;
     }
 
     .note-small {
-      font-size: 12.5px;
+      font-size: 12px;
       color: var(--text-muted);
-      margin-top: 6px;
-    }
-
-    @media (max-width: 768px) {
-      .cover-page {
-        flex-direction: column;
-      }
-      .cover-stripe {
-        width: 100%;
-        height: 16px;
-      }
-      .cover-main {
-        padding: 32px 24px;
-      }
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-      .header-logo img { margin-bottom: 10px; }
-      .header-text { text-align: center; margin-left: 0; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- PORTADA CON FRANJA LATERAL -->
-  <div class="page">
-    <div class="cover-page">
-      <div class="cover-stripe"></div>
-      <div class="cover-main">
-        <div class="cover-logo">
-          <!-- Cambia la ruta del logo según tu entorno -->
-          <img src="image\logo-willtechti.png" alt="Willtech Logo" />
-        </div>
-        <div class="cover-title">Propuesta de Desarrollo</div>
-        <div class="cover-subtitle">Plataforma Médica Premium</div>
-
-        <p class="cover-meta">Presentado a: Higort Fernández y José Rodríguez</p>
-        <p class="cover-meta">Proveedor: Willtech</p>
-
-        <p class="cover-footer">Documento confidencial – Uso exclusivo del cliente</p>
+<!-- PORTADA -->
+<div class="page">
+  <div class="cover-page">
+    <div class="cover-stripe"></div>
+    <div class="cover-main">
+      <div class="cover-logo">
+        <img src="image/logo-willtechti.png" alt="Willtech Logo">
       </div>
+      <div class="cover-title">Propuesta de Servicios Digitales</div>
+      <div class="cover-subtitle">Community Content & Gestión de Facebook</div>
+      <p class="cover-meta">Veterinaria – Luque, Paraguay</p>
+      <p class="cover-meta">Proveedor: Willtech</p>
+      <p class="cover-footer">Documento confidencial – Uso exclusivo del cliente</p>
     </div>
   </div>
+</div>
 
-  <!-- PÁGINA CON CONTENIDO DETALLADO -->
-  <div class="page">
+<!-- CONTENIDO -->
+<div class="page">
 
-    <header>
-      <div class="header-logo">
-        <img src="image\logo-willtechti.png" alt="Willtech Logo" />
-      </div>
-      <div class="header-text">
-        <h1>Propuesta de Desarrollo – Plataforma Médica Premium</h1>
-        <p>Presentado a: <strong>Higort Fernández</strong> y <strong>José Rodríguez</strong></p>
-        <p>Proveedor: <strong>Willtech</strong></p>
-        <p class="note">Duración estimada del proyecto: 4 meses</p>
-      </div>
-    </header>
-
-    <main>
-
-      <section>
-        <h2>Resumen Ejecutivo</h2>
-        <p>Willtech propone el desarrollo de una plataforma médica moderna y premium, compuesta por:</p>
-        <ul>
-          <li>Aplicación móvil Android</li>
-          <li>Aplicación móvil iOS</li>
-          <li>Web App</li>
-          <li>Sitio público</li>
-          <li>Panel administrativo</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Objetivo del Proyecto</h2>
-        <p>Crear una herramienta profesional de consulta médica, con contenido exclusivo, suscripciones y accesos multiplataforma.</p>
-      </section>
-
-      <section>
-        <h2>Alcance</h2>
-        <ul>
-          <li>Apps móviles completas (Android & iOS)</li>
-          <li>Web App con autenticación</li>
-          <li>Módulo de suscripciones</li>
-          <li>Buscador y categorización</li>
-          <li>Panel administrativo</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Sistema de Suscripciones</h2>
-        <h3>Apps móviles</h3>
-        <ul>
-          <li>Google Play Billing</li>
-          <li>Apple In-App Purchases</li>
-        </ul>
-
-        <h3>Web (a definir)</h3>
-        <ul>
-          <li>Integración con <strong>Stripe</strong>, <strong>MercadoPago</strong> o <strong>Upay</strong></li>
-          <li>Renovación automática</li>
-          <li>Webhooks para validación de pagos</li>
-          <li>Control de acceso premium</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Tecnologías Propuestas</h2>
-        <ul>
-          <li>Flutter / React Native</li>
-          <li>React Web</li>
-          <li>Node.js o Python</li>
-          <li>PostgreSQL</li>
-          <li>AWS / Google Cloud</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Costos del Proyecto</h2>
-        <table class="cost-table">
-          <tr><th>Concepto</th><th>Monto</th></tr>
-          <tr><td>Costo total del proyecto</td><td><strong>USD 8.000</strong></td></tr>
-          <tr><td>Aporte inicial</td><td><strong>USD 500</strong></td></tr>
-        </table>
-        <p class="note-small">*Montos expresados en USD — Sujeto a cotización del día*</p>
-      </section>
-
-      <section>
-        <h2>Condiciones Comerciales</h2>
-
-        <div class="payment-box">
-          <strong>Aporte inicial: USD 500</strong><br><br>
-          Este pago cubre:
-          <ul>
-            <li>Reserva de agenda</li>
-            <li>Inicio del diseño UX/UI (etapa donde se define la experiencia e interfaz del usuario)</li>
-            <li>Configuración técnica inicial</li>
-          </ul>
-        </div>
-
-        <h3>Resto de pagos</h3>
-        <ul>
-          <li>El saldo se pagará por hitos</li>
-          <li>No habrá costos adicionales sin aprobación</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Cronograma – 4 Meses</h2>
-        <ul>
-          <li>
-            <strong>Mes 1: UX/UI + Arquitectura</strong>
-            <ul>
-              <li>Etapa 1 — Día 15: Diseño UX/UI inicial</li>
-              <li>Etapa 2 — Día 30: Arquitectura técnica</li>
-            </ul>
-          </li>
-
-          <li>
-            <strong>Mes 2: Apps + Backend</strong>
-            <ul>
-              <li>Etapa 3 — Día 15: Base de apps móviles</li>
-              <li>Etapa 4 — Día 30: Desarrollo API y backend</li>
-            </ul>
-          </li>
-
-          <li>
-            <strong>Mes 3: Web + Pagos + Panel admin</strong>
-            <ul>
-              <li>Etapa 5 — Día 15: Web App + login</li>
-              <li>Etapa 6 — Día 30: Pagos y panel admin</li>
-            </ul>
-          </li>
-
-          <li>
-            <strong>Mes 4: QA + Publicación</strong>
-            <ul>
-              <li>Etapa 7 — Día 15: QA y optimización</li>
-              <li>Etapa 8 — Día 30: Publicación + capacitación</li>
-            </ul>
-          </li>
-        </ul>
-
-        <p class="note-small">*El cronograma puede variar según solicitudes adicionales. Cualquier cambio se cotizará como FIX independiente.*</p>
-      </section>
-
-      <section>
-        <h2>Funcionalidades No Incluidas</h2>
-        <p>Estas funcionalidades requieren cotización adicional:</p>
-        <ul>
-          <li>Videollamadas nativas</li>
-          <li>Pagos recurrentes avanzados</li>
-          <li>Integración con aseguradoras</li>
-          <li>Módulo contable / legal</li>
-          <li>Mantenimiento anual</li>
-        </ul>
-        <p class="note-small"><strong>Precio sujeto a variación según funcionalidades adicionales solicitadas por el cliente.</strong></p>
-      </section>
-
-      <!-- FIRMAS -->
-      <section>
-        <h2>Firmas</h2>
-
-        <p style="margin-bottom:18px; color:#555;">
-          Al firmar este documento, ambas partes confirman su conformidad con los términos establecidos.
-        </p>
-
-        <div style="display:flex; flex-direction:column; gap:40px; margin-top:26px;">
-
-          <div style="text-align:left;">
-            <div style="border-top:1px solid #999; width:260px; margin-bottom:6px;"></div>
-            <strong>Higort Fernández</strong><br>Cliente
-          </div>
-
-          <div style="text-align:left;">
-            <div style="border-top:1px solid #999; width:260px; margin-bottom:6px;"></div>
-            <strong>José Rodríguez</strong><br>Cliente
-          </div>
-
-          <div style="text-align:left;">
-            <div style="border-top:1px solid #999; width:260px; margin-bottom:6px;"></div>
-            <strong>Willtech</strong><br>Proveedor
-          </div>
-
-        </div>
-      </section>
-
-    </main>
-
-    <footer>
-      <h3>Próximos pasos</h3>
-      <ul>
-        <li>Aprobación de la propuesta</li>
-        <li>Aporte inicial (USD 500)</li>
-        <li>Reunión de Kick-Off</li>
-        <li>Inicio del diseño UX/UI (etapa donde se define la experiencia e interfaz)</li>
-      </ul>
-    </footer>
-
+<header>
+  <div class="header-logo">
+    <img src="image/logo-willtechti.png" alt="Willtech Logo">
   </div>
+  <div class="header-text">
+    <h1>Propuesta de Servicios – Community Content</h1>
+    <p>Cliente: <strong>Veterinaria – Luque, Paraguay</strong></p>
+    <p>Proveedor: <strong>Willtech</strong></p>
+    <p>Modalidad: Servicio mensual renovable</p>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <h2>Resumen Ejecutivo</h2>
+  <p>
+    Willtech propone la prestación de un servicio profesional de gestión de contenido
+    y administración de la página de Facebook de la veterinaria, con foco en la
+    comunicación con la comunidad, difusión de servicios y campañas solidarias.
+  </p>
+</section>
+
+<section>
+  <h2>Opciones de Servicio</h2>
+  <p>
+    Se presentan distintas opciones de servicio para que la veterinaria pueda elegir
+    el plan que mejor se adapte a sus necesidades actuales.
+  </p>
+</section>
+
+<section>
+  <h2>Plan Básico</h2>
+  <h3>Presencia en Facebook</h3>
+  <ul>
+    <li>1 a 2 publicaciones semanales</li>
+    <li>Publicación de contenido provisto por el cliente</li>
+    <li>Optimización básica de textos</li>
+    <li>No incluye donaciones</li>
+  </ul>
+  <table>
+    <tr><th>Concepto</th><th>Monto</th></tr>
+    <tr><td>Servicio mensual</td><td><strong>Gs. 900.000</strong></td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Plan Intermedio</h2>
+  <h3>Community Content</h3>
+  <ul>
+    <li>2 publicaciones semanales</li>
+    <li>Gestión básica de la página de Facebook</li>
+    <li>Optimización de textos</li>
+    <li>No incluye donaciones</li>
+  </ul>
+  <table>
+    <tr><th>Concepto</th><th>Monto</th></tr>
+    <tr><td>Servicio mensual</td><td><strong>Gs. 1.200.000</strong></td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Plan Recomendado ⭐</h2>
+  <h3>Community Content + Donaciones</h3>
+  <ul>
+    <li>3 publicaciones semanales</li>
+    <li>Gestión profesional de Facebook</li>
+    <li>Configuración de donaciones</li>
+    <li>Capacitación básica</li>
+  </ul>
+  <table>
+    <tr><th>Concepto</th><th>Monto</th></tr>
+    <tr><td>Servicio mensual</td><td><strong>Gs. 1.800.000</strong></td></tr>
+    <tr><td>Ajuste inicial (única vez)</td><td><strong>Gs. 400.000</strong></td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Plan Premium</h2>
+  <h3>Comunidad Activa</h3>
+  <ul>
+    <li>4 a 5 publicaciones semanales</li>
+    <li>Gestión activa de la comunidad</li>
+    <li>Campañas solidarias</li>
+    <li>Reporte mensual detallado</li>
+  </ul>
+  <table>
+    <tr><th>Concepto</th><th>Monto</th></tr>
+    <tr><td>Servicio mensual</td><td><strong>Gs. 2.500.000</strong></td></tr>
+    <tr><td>Ajuste inicial (única vez)</td><td><strong>Gs. 400.000</strong></td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Condiciones Comerciales</h2>
+  <ul>
+    <li>Servicio mensual renovable</li>
+    <li>Pago adelantado</li>
+    <li>Contenido provisto por el cliente</li>
+    <li>El ajuste inicial es único y no varía según el plan</li>
+    <li>Las donaciones no incluyen manejo de fondos</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Firmas</h2>
+  <p>Cliente: <strong>Veterinaria – Luque, Paraguay</strong></p>
+  <p>Proveedor: <strong>Willtech</strong></p>
+</section>
+
+</main>
+
+<footer>
+  <h3>Próximos pasos</h3>
+  <ul>
+    <li>Aprobación de la propuesta</li>
+    <li>Selección del plan</li>
+    <li>Pago del ajuste inicial (si aplica)</li>
+    <li>Inicio del servicio</li>
+  </ul>
+</footer>
+
+</div>
 
 </body>
 </html>
-
-
-
-
