@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Propuesta de Servicios Digitales – Veterinaria</title>
+  <title>Propuesta de Desarrollo Web – MotoYa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
@@ -12,9 +12,11 @@
       --border: #d8d8d8;
       --text-dark: #333333;
       --text-muted: #666666;
-      --accent: #0099cc;
+      --accent: #0a4fa3;
+      --accent2: #0f7ac4;
       --radius-lg: 18px;
       --shadow-soft: 0 4px 14px rgba(0,0,0,0.08);
+      --chip: #eef5ff;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,7 +30,7 @@
     }
 
     .page {
-      max-width: 940px;
+      max-width: 980px;
       margin: 0 auto 40px;
       background: var(--paper);
       border-radius: 20px;
@@ -37,67 +39,35 @@
       overflow: hidden;
     }
 
-    .cover-page {
-      display: flex;
-      min-height: 420px;
-    }
-
-    .cover-stripe {
-      width: 80px;
-      background: linear-gradient(180deg, #0a4fa3, #0f7ac4);
-    }
-
+    /* Cover */
+    .cover-page { display: flex; min-height: 420px; }
+    .cover-stripe { width: 90px; background: linear-gradient(180deg, var(--accent), var(--accent2)); }
     .cover-main {
       flex: 1;
-      padding: 40px 48px;
+      padding: 44px 52px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
       justify-content: center;
     }
-
-    .cover-logo img {
-      width: 180px;
-      margin-bottom: 24px;
-    }
-
-    .cover-title {
-      font-size: 28px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .cover-subtitle {
-      font-size: 22px;
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
-
-    .cover-meta {
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    .cover-footer {
-      font-size: 11px;
-      color: #777;
-      margin-top: 30px;
-    }
+    .cover-logo img { width: 180px; margin-bottom: 24px; }
+    .cover-title { font-size: 30px; font-weight: 700; margin-bottom: 6px; }
+    .cover-subtitle { font-size: 18px; font-weight: 600; margin-bottom: 18px; color:#222; }
+    .cover-meta { font-size: 14px; color: var(--text-muted); }
+    .cover-footer { font-size: 11px; color: #777; margin-top: 30px; }
 
     header {
       display: flex;
       align-items: center;
       padding: 26px 36px;
       border-bottom: 1px solid var(--border);
+      gap: 18px;
     }
-
     .header-logo img { width: 130px; }
-
-    .header-text {
-      margin-left: auto;
-      text-align: right;
-    }
+    .header-text { margin-left: auto; text-align: right; }
+    .header-text h1 { font-size: 20px; margin-bottom: 6px; }
+    .header-text p { font-size: 13px; color: #444; }
 
     main { padding: 28px 38px; }
 
@@ -110,55 +80,56 @@
     }
 
     h2 { font-size: 20px; margin-bottom: 10px; }
-    h3 { font-size: 16px; margin: 8px 0; color: #444; }
+    h3 { font-size: 16px; margin: 10px 0 6px; color: #444; }
 
-    p, ul li {
-      font-size: 14px;
-      color: #444;
-    }
+    p, ul li { font-size: 14px; color: #444; }
 
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
+    ul { list-style: none; padding-left: 0; margin-top: 6px; }
+    ul li { padding-left: 16px; position: relative; margin-bottom: 6px; }
+    ul li::before { content: "•"; position: absolute; left: 4px; color: var(--accent2); }
 
-    ul li {
-      padding-left: 16px;
-      position: relative;
-      margin-bottom: 6px;
-    }
-
-    ul li::before {
-      content: "•";
-      position: absolute;
-      left: 4px;
-      color: var(--accent);
+    .chips { display:flex; flex-wrap:wrap; gap:8px; margin-top: 8px; }
+    .chip {
+      font-size: 12px;
+      padding: 6px 10px;
+      background: var(--chip);
+      border: 1px solid #d7e7ff;
+      border-radius: 999px;
+      color: #1f3b66;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 10px;
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
     }
-
     table th, table td {
       padding: 10px;
       border: 1px solid var(--border);
       font-size: 14px;
+      vertical-align: top;
+    }
+    table th { background: #f0f0f0; font-weight: 700; }
+    .price { font-weight: 800; }
+
+    .two-col {
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
     }
 
-    table th {
-      background: #f0f0f0;
-      font-weight: 600;
-    }
+    .note-small { font-size: 12px; color: var(--text-muted); }
 
-    footer {
-      padding: 0 38px 26px;
-    }
+    footer { padding: 0 38px 26px; }
+    .kpi { font-weight: 700; color:#1e3a8a; }
 
-    .note-small {
-      font-size: 12px;
-      color: var(--text-muted);
+    @media (max-width: 860px){
+      .two-col { grid-template-columns: 1fr; }
+      header { flex-direction: column; align-items: flex-start; }
+      .header-text { margin-left: 0; text-align: left; }
     }
   </style>
 </head>
@@ -171,12 +142,23 @@
     <div class="cover-stripe"></div>
     <div class="cover-main">
       <div class="cover-logo">
+        <!-- Cambiá el logo por el de MotoYa si corresponde -->
         <img src="image/logo-willtechti.png" alt="Willtech Logo">
       </div>
-      <div class="cover-title">Propuesta de Servicios Digitales</div>
-      <div class="cover-subtitle">Community Content & Gestión de Facebook</div>
-      <p class="cover-meta">Veterinaria – Luque, Paraguay</p>
-      <p class="cover-meta">Proveedor: Willtech</p>
+      <div class="cover-title">Propuesta de Desarrollo Web</div>
+      <div class="cover-subtitle">Plataforma de Pedidos de Delivery + Panel de Administración</div>
+
+      <p class="cover-meta"><strong>Cliente:</strong> MotoYa</p>
+      <p class="cover-meta"><strong>Dueño:</strong> Marcelo Adorno</p>
+      <p class="cover-meta"><strong>Proveedor:</strong> Willtech</p>
+
+      <div class="chips" aria-label="Alcance rápido">
+        <span class="chip">Pedidos de delivery</span>
+        <span class="chip">Pago online opcional</span>
+        <span class="chip">WhatsApp integrado</span>
+        <span class="chip">Panel admin</span>
+      </div>
+
       <p class="cover-footer">Documento confidencial – Uso exclusivo del cliente</p>
     </div>
   </div>
@@ -190,10 +172,10 @@
     <img src="image/logo-willtechti.png" alt="Willtech Logo">
   </div>
   <div class="header-text">
-    <h1>Propuesta de Servicios – Community Content</h1>
-    <p>Cliente: <strong>Veterinaria – Luque, Paraguay</strong></p>
-    <p>Proveedor: <strong>Willtech</strong></p>
-    <p>Modalidad: Servicio mensual renovable</p>
+    <h1>Propuesta de Desarrollo – MotoYa</h1>
+    <p>Cliente: <strong>MotoYa</strong> | Dueño: <strong>Marcelo Adorno</strong></p>
+    <p>Modalidad: Proyecto + mantenimiento opcional</p>
+    <p>Entrega: Web responsive (móvil y escritorio)</p>
   </div>
 </header>
 
@@ -202,96 +184,171 @@
 <section>
   <h2>Resumen Ejecutivo</h2>
   <p>
-    Willtech propone la prestación de un servicio profesional de gestión de contenido
-    y administración de la página de Facebook de la veterinaria, con foco en la
-    comunicación con la comunidad, difusión de servicios y campañas solidarias.
+    Willtech propone el desarrollo de un sitio web para <strong>MotoYa</strong> que permita a los clientes
+    <strong>crear pedidos de delivery</strong> de forma rápida desde el celular, con opción de
+    <strong>cobro online</strong> (Dinelco / uPay / Bancard) o pedido <strong>sin cobro</strong>.
+    Del lado de MotoYa, se incluye un <strong>panel de administración</strong> para visualizar y gestionar
+    todos los pedidos con sus datos completos.
   </p>
 </section>
 
 <section>
-  <h2>Opciones de Servicio</h2>
+  <h2>Objetivo del Proyecto</h2>
+  <ul>
+    <li>Facilitar que el cliente cree un pedido en menos de 2 minutos.</li>
+    <li>Reducir errores de dirección y datos del pedido.</li>
+    <li>Centralizar pedidos en un panel para el equipo de MotoYa.</li>
+    <li>Habilitar pago online opcional cuando el pedido sea “cobrado”.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Alcance Funcional</h2>
+
+  <div class="two-col">
+    <div>
+      <h3>1) Portal del Cliente (Web)</h3>
+      <ul>
+        <li>Crear pedido de delivery (formulario).</li>
+        <li>Ingresar <strong>dirección de retiro</strong> (origen).</li>
+        <li>Ingresar <strong>dirección de entrega</strong> (destino).</li>
+        <li>Seleccionar si el pedido <strong>se cobra o no</strong>.</li>
+        <li>Si “se cobra”, habilitar <strong>pasarela/túnel de pago</strong> (Dinelco / uPay / Bancard).</li>
+        <li>Describir el paquete / detalles del envío.</li>
+        <li>Ingresar <strong>nombre</strong> y <strong>WhatsApp</strong> del cliente.</li>
+        <li>Confirmación del pedido + mensaje por WhatsApp (opcional).</li>
+      </ul>
+      <p class="note-small">
+        Nota: El “túnel de pago” se integra según disponibilidad de API/credenciales del proveedor de pago.
+      </p>
+    </div>
+
+    <div>
+      <h3>2) Panel Administrativo (MotoYa)</h3>
+      <ul>
+        <li>Login de administrador.</li>
+        <li>Listado de pedidos con filtros (fecha, estado, cobrado/no cobrado).</li>
+        <li>Detalle completo del pedido (origen, destino, paquete, cliente, WhatsApp).</li>
+        <li>Gestión de estados: <strong>Nuevo → En proceso → Entregado / Cancelado</strong>.</li>
+        <li>Registro de pago: estado del pago (pendiente / aprobado / rechazado).</li>
+        <li>Exportación básica (CSV/Excel) opcional.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Flujo de Pedido (Cliente)</h2>
+  <ol style="margin-left:18px; color:#444; font-size:14px;">
+    <li>Cliente ingresa a la web de MotoYa.</li>
+    <li>Completa retiro, entrega, descripción del paquete, nombre y WhatsApp.</li>
+    <li>Selecciona “¿Se cobra?”:
+      <ul style="margin-top:6px;">
+        <li>Si <strong>No</strong> → confirma pedido y se registra en el panel.</li>
+        <li>Si <strong>Sí</strong> → se muestra el pago (Dinelco/uPay/Bancard) y, al aprobarse, se confirma.</li>
+      </ul>
+    </li>
+    <li>MotoYa visualiza el pedido en el panel y gestiona el estado.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Integración de Pagos</h2>
   <p>
-    Se presentan distintas opciones de servicio para que la veterinaria pueda elegir
-    el plan que mejor se adapte a sus necesidades actuales.
+    La integración del pago se realizará con el proveedor que el cliente defina (Dinelco, uPay o Bancard),
+    sujeto a la disponibilidad de su documentación técnica y credenciales.
+  </p>
+  <ul>
+    <li>Opción “cobrado”: el cliente paga antes de confirmar el pedido (flujo recomendado).</li>
+    <li>Registro del estado del pago en el panel.</li>
+    <li>Webhooks/confirmación automática si el proveedor lo permite.</li>
+  </ul>
+  <p class="note-small">
+    Si el proveedor requiere alta comercial previa o contratos, ese proceso queda a cargo de MotoYa.
   </p>
 </section>
 
 <section>
-  <h2>Plan Básico</h2>
-  <h3>Presencia en Facebook</h3>
+  <h2>Requisitos / Insumos del Cliente</h2>
   <ul>
-    <li>1 a 2 publicaciones semanales</li>
-    <li>Publicación de contenido provisto por el cliente</li>
-    <li>Optimización básica de textos</li>
-    <li>No incluye donaciones</li>
+    <li>Logo e identidad visual de MotoYa (o lineamientos de colores/tipografía).</li>
+    <li>Dominio (ej. motoya.com.py) y acceso al hosting/VPS (si aplica).</li>
+    <li>Credenciales/documentación de la pasarela de pago elegida (Dinelco/uPay/Bancard).</li>
+    <li>Textos básicos: contacto, horarios, cobertura, políticas (opcional).</li>
   </ul>
-  <table>
-    <tr><th>Concepto</th><th>Monto</th></tr>
-    <tr><td>Servicio mensual</td><td><strong>Gs. 900.000</strong></td></tr>
-  </table>
 </section>
 
 <section>
-  <h2>Plan Intermedio</h2>
-  <h3>Community Content</h3>
-  <ul>
-    <li>2 publicaciones semanales</li>
-    <li>Gestión básica de la página de Facebook</li>
-    <li>Optimización de textos</li>
-    <li>No incluye donaciones</li>
-  </ul>
+  <h2>Opciones de Entrega (Planes)</h2>
+  <p>
+    Se presentan opciones para ajustar el alcance según presupuesto. Los montos son referenciales y pueden
+    ajustarse según requerimientos finales (especialmente la integración de pagos).
+  </p>
+
   <table>
-    <tr><th>Concepto</th><th>Monto</th></tr>
-    <tr><td>Servicio mensual</td><td><strong>Gs. 1.200.000</strong></td></tr>
+    <tr>
+      <th>Plan</th>
+      <th>Incluye</th>
+      <th>Entrega estimada</th>
+      <th>Inversión</th>
+    </tr>
+    <tr>
+      <td><strong>Plan 1 – Base</strong></td>
+      <td>
+        Web responsive + formulario de pedido (sin pagos) + panel admin (login, listado, detalle, estados).
+      </td>
+      <td>10 a 15 días hábiles</td>
+      <td class="price">Gs. 2.500.000</td>
+    </tr>
+    <tr>
+      <td><strong>Plan 2 – Pago Online</strong> ⭐</td>
+      <td>
+        Todo Plan 1 + integración de pago (1 pasarela: Dinelco o uPay o Bancard) + registro de pago.
+      </td>
+      <td>15 a 25 días hábiles</td>
+      <td class="price">Gs. 4.500.000</td>
+    </tr>
+    <tr>
+      <td><strong>Plan 3 – Plus</strong></td>
+      <td>
+        Todo Plan 2 + exportación CSV/Excel + reportes básicos + mejoras UX (validaciones, confirmaciones).
+      </td>
+      <td>20 a 30 días hábiles</td>
+      <td class="price">Gs. 5.800.000</td>
+    </tr>
   </table>
+
+  <p class="note-small" style="margin-top:10px;">
+    * La integración con pasarela depende de documentación y credenciales. Si el proveedor requiere desarrollo adicional
+    (webhooks, tokenización, 3DS, etc.), se ajustará el alcance.
+  </p>
 </section>
 
 <section>
-  <h2>Plan Recomendado ⭐</h2>
-  <h3>Community Content + Donaciones</h3>
-  <ul>
-    <li>3 publicaciones semanales</li>
-    <li>Gestión profesional de Facebook</li>
-    <li>Configuración de donaciones</li>
-    <li>Capacitación básica</li>
-  </ul>
+  <h2>Mantenimiento (Opcional)</h2>
   <table>
-    <tr><th>Concepto</th><th>Monto</th></tr>
-    <tr><td>Servicio mensual</td><td><strong>Gs. 1.800.000</strong></td></tr>
-    <tr><td>Ajuste inicial (única vez)</td><td><strong>Gs. 400.000</strong></td></tr>
-  </table>
-</section>
-
-<section>
-  <h2>Plan Premium</h2>
-  <h3>Comunidad Activa</h3>
-  <ul>
-    <li>4 a 5 publicaciones semanales</li>
-    <li>Gestión activa de la comunidad</li>
-    <li>Campañas solidarias</li>
-    <li>Reporte mensual detallado</li>
-  </ul>
-  <table>
-    <tr><th>Concepto</th><th>Monto</th></tr>
-    <tr><td>Servicio mensual</td><td><strong>Gs. 2.500.000</strong></td></tr>
-    <tr><td>Ajuste inicial (única vez)</td><td><strong>Gs. 400.000</strong></td></tr>
+    <tr><th>Servicio</th><th>Incluye</th><th>Monto mensual</th></tr>
+    <tr>
+      <td>Soporte & mejoras</td>
+      <td>Correcciones, backups, monitoreo básico, pequeñas mejoras (hasta X horas/mes).</td>
+      <td class="price">Gs. 450.000</td>
+    </tr>
   </table>
 </section>
 
 <section>
   <h2>Condiciones Comerciales</h2>
   <ul>
-    <li>Servicio mensual renovable</li>
-    <li>Pago adelantado</li>
-    <li>Contenido provisto por el cliente</li>
-    <li>El ajuste inicial es único y no varía según el plan</li>
-    <li>Las donaciones no incluyen manejo de fondos</li>
+    <li>Forma de pago sugerida: 50% inicio / 50% contra entrega (o según acuerdo).</li>
+    <li>El cliente provee credenciales de pasarela de pago y acceso a hosting/servidor si aplica.</li>
+    <li>Se entregará el sistema con acceso administrativo para MotoYa.</li>
+    <li>La propuesta considera un alcance estándar; cambios mayores se cotizan como adicional.</li>
   </ul>
 </section>
 
 <section>
   <h2>Firmas</h2>
-  <p>Cliente: <strong>Veterinaria – Luque, Paraguay</strong></p>
+  <p>Cliente: <strong>MotoYa</strong> – Marcelo Adorno</p>
   <p>Proveedor: <strong>Willtech</strong></p>
 </section>
 
@@ -300,11 +357,14 @@
 <footer>
   <h3>Próximos pasos</h3>
   <ul>
-    <li>Aprobación de la propuesta</li>
-    <li>Selección del plan</li>
-    <li>Pago del ajuste inicial (si aplica)</li>
-    <li>Inicio del servicio</li>
+    <li>Confirmación del plan (Base / Pago Online / Plus).</li>
+    <li>Entrega de logo, datos y accesos necesarios.</li>
+    <li>Definición de pasarela de pago (Dinelco / uPay / Bancard).</li>
+    <li>Inicio del desarrollo y validación de avances.</li>
   </ul>
+  <p class="note-small" style="margin-top:10px;">
+    Contacto: (agregá tu teléfono / WhatsApp / correo aquí)
+  </p>
 </footer>
 
 </div>
