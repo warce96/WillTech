@@ -2,69 +2,83 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Propuesta Sistema Odontológico</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sistema Odontológico</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 
 :root{
 --bg:#f4f6fb;
---paper:#fff;
+--paper:#ffffff;
 --border:#e4e7ec;
---accent:#2563eb;
---accent2:#1e40af;
+--primary:#1e40af;
+--primary2:#2563eb;
 --text:#1f2937;
 --muted:#667085;
 }
 
+*{
+box-sizing:border-box;
+}
+
 body{
+margin:0;
 font-family:"Segoe UI",Arial;
 background:var(--bg);
-margin:0;
-padding:20px;
 color:var(--text);
+padding:15px;
 }
+
+/* CONTENEDOR */
 
 .page{
 max-width:1000px;
 margin:auto;
-background:white;
+background:var(--paper);
 border-radius:16px;
 box-shadow:0 10px 30px rgba(0,0,0,0.08);
 overflow:hidden;
-margin-bottom:30px;
+margin-bottom:25px;
 }
 
 /* HEADER */
 
 .header{
-padding:30px;
-background:linear-gradient(135deg,var(--accent),var(--accent2));
+background:linear-gradient(135deg,var(--primary),var(--primary2));
 color:white;
+padding:25px;
 text-align:center;
 }
 
 .header h1{
 margin:0;
-font-size:28px;
+font-size:24px;
 }
 
 .header p{
-margin-top:6px;
+margin-top:5px;
+font-size:14px;
 opacity:.9;
 }
 
-/* SECTION */
+/* SECCIONES */
 
 section{
-padding:25px 30px;
+padding:20px;
 border-bottom:1px solid var(--border);
 }
 
 h2{
+font-size:18px;
 margin-bottom:10px;
-font-size:20px;
 }
+
+p{
+font-size:14px;
+color:#444;
+}
+
+/* LISTAS */
 
 ul{
 padding-left:18px;
@@ -72,45 +86,83 @@ padding-left:18px;
 
 li{
 margin-bottom:6px;
+font-size:14px;
 }
 
-/* CARDS */
+/* GRID */
 
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:15px;
+gap:12px;
 }
+
+/* CARD */
 
 .card{
 background:#f8fafc;
-padding:18px;
-border-radius:12px;
+padding:14px;
+border-radius:10px;
 border:1px solid var(--border);
 }
 
-/* TABLE */
+/* TABLA */
+
+.table-wrap{
+overflow-x:auto;
+}
 
 table{
 width:100%;
 border-collapse:collapse;
 margin-top:10px;
+min-width:500px;
 }
 
 th,td{
-border:1px solid var(--border);
 padding:10px;
-font-size:14px;
+border:1px solid var(--border);
+font-size:13px;
+text-align:left;
 }
 
 th{
 background:#f1f5f9;
 }
 
+/* ALERTA */
+
+.alert{
+background:#fff4e5;
+border:1px solid #ffd8a8;
+padding:10px;
+border-radius:8px;
+font-size:13px;
+margin-top:10px;
+}
+
 /* FOOTER */
 
 .footer{
-padding:25px;
+padding:20px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.header h1{
+font-size:20px;
+}
+
+section{
+padding:15px;
+}
+
 }
 
 </style>
@@ -123,59 +175,67 @@ padding:25px;
 
 <div class="header">
 <h1>Sistema de Gestión Odontológica</h1>
-<p>Propuesta de Desarrollo Web Profesional</p>
+<p>Propuesta de Desarrollo Web – Uso Interno</p>
 </div>
 
 <section>
+
 <h2>Resumen Ejecutivo</h2>
 
 <p>
-Se propone el desarrollo de un sistema web profesional para la gestión integral de una clínica odontológica,
-permitiendo controlar pacientes, tratamientos, pagos y recordatorios automáticos.
+Se propone el desarrollo de un sistema web interno para la gestión integral de pacientes,
+tratamientos y control de pagos dentro de la clínica odontológica.
 </p>
+
+<div class="alert">
+⚠ Este sistema es exclusivamente de uso interno administrativo.  
+No incluye pasarela de pagos ni cobros online, únicamente control financiero.
+</div>
 
 </section>
 
 <section>
+
 <h2>Objetivo del Sistema</h2>
 
 <ul>
-<li>Centralizar información de pacientes.</li>
-<li>Controlar presupuestos por tratamiento.</li>
-<li>Registrar pagos y saldo pendiente.</li>
-<li>Automatizar recordatorios de citas.</li>
-<li>Mejorar la gestión administrativa de la clínica.</li>
+<li>Controlar pacientes y sus datos personales.</li>
+<li>Registrar presupuestos por tratamiento.</li>
+<li>Llevar control de pagos realizados.</li>
+<li>Calcular automáticamente saldo pendiente.</li>
+<li>Gestionar recordatorios de pacientes.</li>
 </ul>
 
 </section>
 
 <section>
-<h2>Módulos Principales</h2>
+
+<h2>Módulos del Sistema</h2>
 
 <div class="grid">
 
 <div class="card">
 <h3>Pacientes</h3>
 <ul>
-<li>Registro de datos personales</li>
-<li>Historial clínico</li>
-<li>Teléfono y contacto</li>
+<li>Nombre, cédula, teléfono</li>
+<li>Datos personales completos</li>
+<li>Historial clínico básico</li>
 </ul>
 </div>
 
 <div class="card">
 <h3>Tratamientos</h3>
 <ul>
-<li>Presupuesto total por paciente</li>
-<li>Detalle por tratamiento</li>
-<li>Estado del tratamiento</li>
+<li>Presupuesto total</li>
+<li>Detalle por procedimiento</li>
+<li>Seguimiento del tratamiento</li>
 </ul>
 </div>
 
 <div class="card">
 <h3>Pagos</h3>
 <ul>
-<li>Registro de pagos realizados</li>
+<li>Registro de pagos</li>
 <li>Fecha de pago</li>
 <li>Saldo restante automático</li>
 </ul>
@@ -186,7 +246,7 @@ permitiendo controlar pacientes, tratamientos, pagos y recordatorios automático
 <ul>
 <li>Agendamiento de citas</li>
 <li>Control de asistencia</li>
-<li>Historial de visitas</li>
+<li>Historial de consultas</li>
 </ul>
 </div>
 
@@ -196,36 +256,9 @@ permitiendo controlar pacientes, tratamientos, pagos y recordatorios automático
 
 <section>
 
-<h2>Funcionalidades Clave</h2>
+<h2>Control Financiero del Paciente</h2>
 
-<ul>
-<li>Ingreso de pacientes con datos completos.</li>
-<li>Registro de presupuesto total por tratamiento.</li>
-<li>Detalle de tratamientos (ej: limpieza, ortodoncia, etc).</li>
-<li>Registro de pagos con fecha.</li>
-<li>Cálculo automático de saldo restante.</li>
-<li>Historial completo de pagos.</li>
-<li>Alertas de pacientes con saldo pendiente.</li>
-</ul>
-
-</section>
-
-<section>
-
-<h2>Recordatorios Inteligentes</h2>
-
-<ul>
-<li>Recordatorio automático si el paciente no vuelve en 6 meses.</li>
-<li>Recordatorio de cita 1 día antes.</li>
-<li>Recordatorio el mismo día de la cita.</li>
-<li>Posibilidad de envío vía WhatsApp.</li>
-</ul>
-
-</section>
-
-<section>
-
-<h2>Ejemplo de Control Financiero</h2>
+<div class="table-wrap">
 
 <table>
 
@@ -238,7 +271,7 @@ permitiendo controlar pacientes, tratamientos, pagos y recordatorios automático
 </tr>
 
 <tr>
-<td>Juan Pérez</td>
+<td>Ejemplo</td>
 <td>Ortodoncia</td>
 <td>5.000.000</td>
 <td>2.000.000</td>
@@ -247,11 +280,44 @@ permitiendo controlar pacientes, tratamientos, pagos y recordatorios automático
 
 </table>
 
+</div>
+
+</section>
+
+<section>
+
+<h2>Funcionalidades Clave</h2>
+
+<ul>
+<li>Registro completo de pacientes.</li>
+<li>Ingreso de presupuesto total por tratamiento.</li>
+<li>Detalle de tratamientos realizados.</li>
+<li>Registro de pagos con fecha.</li>
+<li>Cálculo automático de saldo restante.</li>
+<li>Historial completo de pagos.</li>
+<li>Control administrativo simple y claro.</li>
+</ul>
+
+</section>
+
+<section>
+
+<h2>Recordatorios Inteligentes</h2>
+
+<ul>
+<li>Pacientes sin consulta en 6 meses.</li>
+<li>Recordatorio un día antes de la cita.</li>
+<li>Recordatorio el mismo día.</li>
+<li>Posible integración con WhatsApp.</li>
+</ul>
+
 </section>
 
 <section>
 
 <h2>Planes de Desarrollo</h2>
+
+<div class="table-wrap">
 
 <table>
 
@@ -264,14 +330,14 @@ permitiendo controlar pacientes, tratamientos, pagos y recordatorios automático
 
 <tr>
 <td>Básico</td>
-<td>Pacientes + Pagos + Presupuestos</td>
+<td>Pacientes + pagos + control de saldo</td>
 <td>10 días</td>
 <td>Gs. 2.500.000</td>
 </tr>
 
 <tr>
 <td>Profesional ⭐</td>
-<td>Todo + recordatorios + historial</td>
+<td>Todo + historial + recordatorios</td>
 <td>15-20 días</td>
 <td>Gs. 4.500.000</td>
 </tr>
@@ -285,6 +351,8 @@ permitiendo controlar pacientes, tratamientos, pagos y recordatorios automático
 
 </table>
 
+</div>
+
 </section>
 
 <section>
@@ -292,10 +360,10 @@ permitiendo controlar pacientes, tratamientos, pagos y recordatorios automático
 <h2>Beneficios</h2>
 
 <ul>
-<li>Control total del flujo de dinero.</li>
+<li>Control total del flujo financiero.</li>
+<li>Mejor organización de pacientes.</li>
 <li>Reducción de pacientes perdidos.</li>
-<li>Automatización administrativa.</li>
-<li>Imagen profesional de la clínica.</li>
+<li>Mayor profesionalismo de la clínica.</li>
 </ul>
 
 </section>
